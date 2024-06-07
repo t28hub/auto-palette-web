@@ -1,0 +1,49 @@
+{
+  "name": "auto-palette-web",
+  "description": "The official website for auto-palette, a color palette extraction library.",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Tatsuya Maki",
+    "url": "https://github.com/t28hub"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm",
+    "clean": "rimraf .next",
+    "clean:all": "rimraf .next node_modules",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --fix"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "markdownlint-cli2": "^0.13.0",
+    "postcss": "^8.4.38",
+    "rimraf": "^5.0.7",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["biome lint", "biome format --write"],
+    "*.json": ["biome format --write"],
+    "*.md": ["markdownlint-cli2 --fix"]
+  },
+  "packageManager": "pnpm@9.2.0"
+}

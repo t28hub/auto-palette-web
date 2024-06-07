@@ -1,0 +1,6 @@
+# Default settings for markdownlint
+default: true
+
+# Disable max line length
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
+MD013: false
