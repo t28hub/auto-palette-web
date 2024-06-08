@@ -11,14 +11,18 @@
   "scripts": {
     "prepare": "husky",
     "preinstall": "npx only-allow pnpm",
-    "clean": "rimraf .next",
-    "clean:all": "rimraf .next node_modules",
+    "clean": "rimraf .next coverage",
+    "clean:all": "rimraf .next coverage node_modules",
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome lint .",
-    "lint:fix": "biome lint . --fix"
+    "lint:fix": "biome lint . --fix",
+    "test": "pnpm test:coverage",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:ui": "vitest run --coverage --ui",
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "next": "14.2.3",
@@ -29,16 +33,22 @@
     "@biomejs/biome": "1.8.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@testing-library/react": "^16.0.0",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
     "husky": "^9.0.11",
+    "jsdom": "^24.1.0",
     "lint-staged": "^15.2.5",
     "markdownlint-cli2": "^0.13.0",
     "postcss": "^8.4.38",
     "rimraf": "^5.0.7",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": ["biome lint", "biome format --write"],
