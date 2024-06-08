@@ -18,7 +18,7 @@ Follow these steps to get started with development:
 2. Install the latest LTS version of [Node.js](https://nodejs.org/en)
 3. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 4. Install dependencies using `pnpm install`
-5. Run unit tests and watch for changes using `pnpm dev`
+5. Start the development server using `pnpm dev`
 
 ## License
 

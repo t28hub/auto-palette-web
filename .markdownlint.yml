@@ -4,3 +4,7 @@ default: true
 # Disable max line length
 # https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
 MD013: false
+
+# Disable first line heading
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/md041.md
+MD041: false
