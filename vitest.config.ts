@@ -16,8 +16,8 @@ export default defineConfig({
     coverage: {
       all: false,
       provider: 'v8',
-      include: ['src/**/*'],
-      exclude: ['**/*.test.ts', '**/*.d.ts'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/components/ui/*.{ts,tsx}', '**/*.test.{ts,tsx}', '**/*.d.ts'],
       reporter: ['lcov', 'html', 'text'],
       reportsDirectory: 'coverage',
       thresholds: {},
