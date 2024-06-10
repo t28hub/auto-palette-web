@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 import { ButtonLink } from '@/components/navigation';
-import { GitHub } from '@/components/icons';
+import { GitHubIcon } from '@/components/icons';
 
 /**
  * The header component that displays the site title and navigation links.
@@ -16,7 +16,7 @@ const Header: FC = () => {
 
         <div className='flex flex-row justify-end flex-1'>
           <ButtonLink href={'https://github.com/t28hub/auto-palette'} external>
-            <GitHub className='w-5 h-5' />
+            <GitHubIcon className='w-5 h-5' />
             <span className='sr-only'>GitHub</span>
           </ButtonLink>
         </div>

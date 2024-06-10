@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/card';
 import { Footer, Header } from '@/components/layouts';
+import { CodeIcon, CogIcon, PaletteIcon, PipetteIcon, SwatchIcon, WandIcon } from '@/components/icons';
 
 export default function Home() {
   return (
@@ -34,73 +36,76 @@ export default function Home() {
           />
         </div>
 
-        <div className='mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left'>
-          <a
-            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-            className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <h2 className='mb-3 text-2xl font-semibold'>
-              Docs{' '}
-              <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
-                -&gt;
-              </span>
-            </h2>
-            <p className='m-0 max-w-[30ch] text-sm opacity-50'>
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <h2 className='mb-3 text-2xl font-semibold'>
-              Learn{' '}
-              <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
-                -&gt;
-              </span>
-            </h2>
-            <p className='m-0 max-w-[30ch] text-sm opacity-50'>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-            className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <h2 className='mb-3 text-2xl font-semibold'>
-              Templates{' '}
-              <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
-                -&gt;
-              </span>
-            </h2>
-            <p className='m-0 max-w-[30ch] text-sm opacity-50'>Explore starter templates for Next.js.</p>
-          </a>
-
-          <a
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-            className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <h2 className='mb-3 text-2xl font-semibold'>
-              Deploy{' '}
-              <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
-                -&gt;
-              </span>
-            </h2>
-            <p className='m-0 max-w-[30ch] text-balance text-sm opacity-50'>
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <section className='w-full max-w-screen-lg grid items-start grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4'>
+          <Card>
+            <CardHeader>
+              <WandIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Automatic Palette Extraction</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Automatically extract prominent color palettes from images to streamline your design process with ease.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <PipetteIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Detailed Color Insights</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Provide detailed color data including color code, position, population, and ratio of each swatch.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CogIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Multiple Algorithms Support</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Support multiple color extraction algorithms including DBSCAN, DBSCAN++, and K-means++.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <PaletteIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Theme-Based Color Selection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Automatically select colors based on the specified theme including colorful, vivid, light and dark, and
+                more.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <SwatchIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Multiple Color Spaces Support</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Support multiple color space conversion including RGB, HSL, CIE L*a*b* and more. Enable you to use the
+                color data in your favorite color space.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CodeIcon className='w-5 h-5 stroke-muted-foreground' strokeWidth={1.5} />
+              <CardTitle>Multiple Languages Support</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className='text-balance text-sm text-muted-foreground'>
+                Available as a Rust library, WebAssembly, and CLI. Use it in your favorite programming language.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
       </main>
       <Footer license='MIT' copyrightHolder='Tatsuya Maki' />
     </>

@@ -19,14 +19,14 @@ interface ButtonLinkProps extends Omit<LinkProps, 'as'> {
 /**
  * The button link component that wraps a `Link` component in a `Button`.
  */
-const ButtonLink: FC<ButtonLinkProps> = ({ external, href, ...rest }) => {
+const ButtonLink: FC<ButtonLinkProps> = ({ external, href, ...props }) => {
   return (
     <Button variant='ghost' asChild>
       <Link
         href={href}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
-        {...rest}
+        {...props}
       />
     </Button>
   );
