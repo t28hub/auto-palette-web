@@ -13,6 +13,7 @@ export default defineConfig({
     },
     environment: 'jsdom',
     testTimeout: 1000,
+    setupFiles: ['test/setup.ts'],
     coverage: {
       all: false,
       provider: 'v8',
