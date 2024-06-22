@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/card';
 import { Footer, Header } from '@/components/layouts';
 import { CodeIcon, CogIcon, PaletteIcon, PipetteIcon, SwatchIcon, WandIcon } from '@/components/icons';
+import { CodeBlock } from '@/components/code';
 
 export default function Home() {
   return (
@@ -8,12 +9,13 @@ export default function Home() {
       <Header />
 
       <main className='flex min-h-screen flex-col items-center justify-between gap-4 p-24'>
-        <section className='w-full max-w-screen-lg flex items-center justify-center'>
-          <p className='flex w-full p-4 font-mono text-sm rounded-lg border-foreground bg-muted'>
-            [dependencies]
-            <br />
-            auto-palette = "0.4.0"
-          </p>
+        <section className='w-full max-w-screen-lg flex items-center justify-start'>
+          <div className='w-full rounded-lg border-foreground bg-accent'>
+            <CodeBlock language={'toml'}>
+              {'[dependencies]'}
+              {'auto-palette = "0.4.0"'}
+            </CodeBlock>
+          </div>
         </section>
 
         <section className='w-full max-w-screen-lg grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 items-stretch'>
