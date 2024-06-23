@@ -24,8 +24,8 @@ const Footer: FC<FooterProps> = ({ license, copyrightHolder }) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='w-full border-t border-border/80'>
-      <div className='flex flex-row items-center justify-center min-w-screen-sm max-w-screen-lg mx-auto py-10'>
+    <footer className='container border-t border-border/80'>
+      <div className='flex flex-col items-center justify-center sm:flex-row sm:items-stretch sm:justify-between gap-4 max-w-screen-lg mx-auto py-10'>
         <p className='font-medium text-sm tracking-normal leading-normal text-muted-foreground'>
           Released under the {license} License.
         </p>
