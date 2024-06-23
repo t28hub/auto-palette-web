@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import { ButtonLink } from '@/components/navigation';
 import { GitHubIcon } from '@/components/icons';
+import { ThemeButton } from '@/components/buttons';
 
 /**
  * The header component that displays the site title and navigation links.
@@ -19,6 +20,7 @@ const Header: FC = () => {
             <GitHubIcon className='w-5 h-5' />
             <span className='sr-only'>GitHub</span>
           </ButtonLink>
+          <ThemeButton />
         </div>
       </div>
     </header>
