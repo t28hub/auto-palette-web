@@ -11,6 +11,7 @@ import {
   useState,
 } from 'react';
 import type { BundledLanguage, BundledTheme, Highlighter } from 'shiki';
+import { logger } from '@/utils';
 
 type Theme = BundledTheme;
 
@@ -74,7 +75,15 @@ const useHighlighter = (light: Theme, dark: Theme): Highlighter | null => {
     };
     controller.signal.addEventListener('abort', abortListener);
 
-    loadHighlighter(light, dark).then((highlighter) => setHighlighter(highlighter));
+    loadHighlighter(light, dark)
+      .then((highlighter) => {
+        logger.debug('Shiki highlighter loaded', highlighter);
+        setHighlighter(highlighter);
+      })
+      .catch((cause) => {
+        logger.warn('Failed to load Shiki highlighter', cause);
+        setHighlighter(null);
+      });
 
     return () => {
       controller.abort();
