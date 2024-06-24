@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
+import { Providers } from '@/providers';
 import { cn } from '@/utils';
-import { ThemeProvider } from '@/providers/theme-provider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable)}>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

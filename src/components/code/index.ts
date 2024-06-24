@@ -1,2 +1,1 @@
-export * from './code-block';
-export * from './syntax-highlight';
+export * from './code';
