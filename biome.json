@@ -3,7 +3,7 @@
   "files": {
     "ignoreUnknown": true,
     "include": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.json"],
-    "ignore": [".next", "node_modules", "coverage"]
+    "ignore": [".next", "node_modules", "coverage", "wasm/dist"]
   },
   "organizeImports": {
     "enabled": true
