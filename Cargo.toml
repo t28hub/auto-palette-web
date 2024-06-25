@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members  = ["wasm"]
+
+[workspace.package]
+edition    = "2021"
+version    = "0.1.0"
+authors    = ["Tatsuya Maki"]
+license    = "MIT"
+homepage   = "https://github.com/t28hub/auto-palette-web"
+repository = "https://github.com/t28hub/auto-palette-web"
+
+[profile.dev]
+opt-level = 3
+
+[profile.test]
+opt-level = 3
+
+[profile.release]
+lto       = true
+opt-level = 's'

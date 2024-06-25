@@ -1,0 +1,23 @@
+[package]
+name                 = "auto-palette-wasm"
+rust-version         = "1.75.0"
+description          = "The WebAssembly bindings for the Auto Palette library."
+readme               = "./README.md"
+publish              = false
+edition.workspace    = true
+version.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+homepage.workspace   = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+auto-palette = { version = "0.4.0", features = [
+  "wasm",
+], default-features = false }
+console_error_panic_hook = "0.1.7"
+js-sys = "0.3.69"
+wasm-bindgen = "0.2.92"
