@@ -6,7 +6,7 @@ use std::str::FromStr;
 #[derive(Debug)]
 pub struct SwatchBinding(Swatch<f64>);
 
-#[wasm_bindgen]
+#[wasm_bindgen(js_class = Swatch)]
 impl SwatchBinding {
   #[wasm_bindgen(getter)]
   pub fn color(&self) -> String {
@@ -34,7 +34,7 @@ impl SwatchBinding {
 #[derive(Debug)]
 pub struct PaletteBinding(Palette<f64>);
 
-#[wasm_bindgen]
+#[wasm_bindgen(js_class = Palette)]
 impl PaletteBinding {
   #[wasm_bindgen(getter)]
   pub fn length(&self) -> usize {
