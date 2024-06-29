@@ -2,7 +2,7 @@ use auto_palette::{Algorithm, ImageData, Palette, Swatch, Theme};
 use wasm_bindgen::{prelude::wasm_bindgen, Clamped, JsValue};
 use std::str::FromStr;
 
-#[wasm_bindgen]
+#[wasm_bindgen(js_name = Swatch)]
 #[derive(Debug)]
 pub struct SwatchBinding(Swatch<f64>);
 
@@ -30,7 +30,7 @@ impl SwatchBinding {
   }
 }
 
-#[wasm_bindgen]
+#[wasm_bindgen(js_name = Palette)]
 #[derive(Debug)]
 pub struct PaletteBinding(Palette<f64>);
 
