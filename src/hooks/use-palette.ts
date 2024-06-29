@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useState } from 'react';
 import { extract as extractPalette, type Palette } from '@/wasm/auto-palette';
 import { useWasm } from '@/providers/wasm-provider';
@@ -71,3 +73,5 @@ const usePalette = (bitmap: ImageBitmap | null, algorithm: string): UsePaletteRe
 
   return { palette, error };
 };
+
+export { usePalette };
