@@ -1,16 +1,7 @@
 'use client';
 
-import {
-  createContext,
-  type FC,
-  type PropsWithChildren,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
-import init, { extract as extractPalette, type InitOutput, type PaletteBinding } from '@/wasm/auto-palette';
+import { createContext, type FC, type PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
+import init, { type InitOutput } from '@/wasm/auto-palette';
 import { logger } from '@/utils';
 
 /**
@@ -18,47 +9,22 @@ import { logger } from '@/utils';
  */
 interface WasmContext {
   /**
-   * Extract a palette from the given image.
-   *
-   * @param image - The image to extract the palette from.
-   * @returns The extracted palette.
+   * The loaded Wasm module.
+   * If the module is not loaded yet, it will be `null`.
    */
-  extract: (image: ImageBitmap) => PaletteBinding;
+  readonly module: InitOutput | null;
 }
 
 const Context = createContext<WasmContext>({
-  extract: () => {
-    throw new Error('Wasm module not initialized yet');
-  },
+  module: null,
 });
 
 const WasmProvider: FC<PropsWithChildren> = ({ children }) => {
   const module = useWasmModule();
 
-  const extract = useCallback(
-    (image: ImageBitmap) => {
-      if (!module) {
-        throw new Error('Wasm module not initialized yet');
-      }
-
-      const { width, height } = image;
-      const canvas = new OffscreenCanvas(width, height);
-      const context = canvas.getContext('2d', { alpha: true });
-      if (!context) {
-        throw new Error('The 2D context is not available on the canvas');
-      }
-
-      context.drawImage(image, 0, 0);
-
-      const imageData = context.getImageData(0, 0, width, height);
-      return extractPalette(width, height, imageData.data, 'dbscan++');
-    },
-    [module],
-  );
-
-  const value = useMemo(() => {
-    return { extract };
-  }, [extract]);
+  const value = useMemo<WasmContext>(() => {
+    return { module };
+  }, [module]);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };

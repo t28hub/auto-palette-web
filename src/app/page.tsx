@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/card';
 import { Footer, Header } from '@/components/layouts';
 import { CodeIcon, CogIcon, PaletteIcon, PipetteIcon, SwatchIcon, WandIcon } from '@/components/icons';
 import { Code } from '@/components/code';
+import { DemoLayout } from '@/layouts';
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
       <Header />
 
       <main className='container flex min-h-screen flex-col items-center justify-between gap-4 py-24'>
+        <DemoLayout />
+
         <section className='w-full min-w-screen-sm  max-w-screen-lg flex items-center justify-start'>
           <div className='w-full rounded-lg border-foreground bg-accent'>
             <Code language='rust'>
