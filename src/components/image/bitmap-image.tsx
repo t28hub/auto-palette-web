@@ -14,6 +14,7 @@ const BitmapImage: FC<BitmapImageProps> = ({ bitmap, height, width, objectFit = 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [scaledBitmap, setScaledBitmap] = useState<ImageBitmap | null>(null);
 
+  // Effect for resizing the image bitmap
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) {
@@ -64,8 +65,6 @@ const BitmapImage: FC<BitmapImageProps> = ({ bitmap, height, width, objectFit = 
       }
     }
 
-    console.info(scaleX, scaleY);
-
     createImageBitmap(bitmap, {
       resizeHeight: bitmapHeight * scaleY,
       resizeWidth: bitmapWidth * scaleX,
@@ -79,6 +78,7 @@ const BitmapImage: FC<BitmapImageProps> = ({ bitmap, height, width, objectFit = 
       });
   }, [bitmap, objectFit]);
 
+  // Effect for drawing the scaled image bitmap
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) {
@@ -96,11 +96,11 @@ const BitmapImage: FC<BitmapImageProps> = ({ bitmap, height, width, objectFit = 
       return;
     }
 
-    const { width, height } = scaledBitmap;
-    const dx = (canvas.width - width) / 2;
-    const dy = (canvas.height - height) / 2;
+    const { width: bitmapWidth, height: bitmapHeight } = scaledBitmap;
+    const dx = (width - bitmapWidth) / 2;
+    const dy = (height - bitmapHeight) / 2;
     context.drawImage(scaledBitmap, dx, dy);
-  }, [scaledBitmap]);
+  }, [width, height, scaledBitmap]);
 
   return <canvas className='block' ref={canvasRef} height={height} width={width} />;
 };

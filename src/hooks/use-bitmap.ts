@@ -38,7 +38,7 @@ class NetworkError extends Error {
  * @param url - The URL of the image to load.
  * @returns The result of the useBitmap hook.
  */
-const useBitmap = (url: string | undefined): UseBitmapResult => {
+const useBitmap = (url: string | null): UseBitmapResult => {
   const abortControllerRef = useRef<AbortController | null>(null);
   const [bitmap, setBitmap] = useState<ImageBitmap | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -55,7 +55,7 @@ const useBitmap = (url: string | undefined): UseBitmapResult => {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
-    fetch(url, { mode: 'cors', signal: controller.signal })
+    fetch(url, { mode: 'cors', cache: 'default', signal: controller.signal })
       .then((response) => {
         if (!response.ok) {
           throw new NetworkError(`Received ${response.status} ${response.statusText} for ${url}`);
