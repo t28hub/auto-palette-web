@@ -9,7 +9,7 @@ interface UseBitmapResult {
   /**
    * The loaded image bitmap.
    */
-  readonly bitmap: ImageBitmap | null;
+  readonly imageBitmap: ImageBitmap | null;
 
   /**
    * The error that occurred while loading the image bitmap.
@@ -81,7 +81,7 @@ const useBitmap = (url: string | null): UseBitmapResult => {
     };
   }, [url]);
 
-  return { bitmap, error };
+  return { imageBitmap: bitmap, error };
 };
 
 export { useBitmap };
