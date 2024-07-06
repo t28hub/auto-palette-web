@@ -9,8 +9,8 @@ export default defineConfig({
     dir: 'test',
     include: ['**/*.test.{ts,tsx}'],
     alias: {
-      '@': resolve(__dirname, 'src'),
-      '@/wasm/auto-palette': resolve(__dirname, './wasm/dist/auto-palette.js'),
+      '@/wasm': resolve(__dirname, './wasm/dist'),
+      '@': resolve(__dirname, './src'),
     },
     environment: 'jsdom',
     testTimeout: 1000,

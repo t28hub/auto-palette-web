@@ -1,7 +1,8 @@
 'use client';
 
 import { cva, type VariantProps } from 'class-variance-authority';
-import { type FC, useMemo } from 'react';
+import React, { type FC, useMemo } from 'react';
+import { CopyButton } from '@/components/buttons';
 import { type Language, useShiki } from '@/providers/shiki-provider';
 import { cn } from '@/utils';
 
@@ -41,13 +42,17 @@ interface CodeProps extends VariantProps<typeof Variants> {
 const Code: FC<CodeProps> = ({ size, language, children }) => {
   const { highlight } = useShiki();
 
+  const code = useMemo(() => {
+    return Array.isArray(children) ? children.join('\n') : children;
+  }, [children]);
+
   const html = useMemo(() => {
-    const code = Array.isArray(children) ? children.join('\n') : children;
     return highlight(code, language);
-  }, [highlight, language, children]);
+  }, [highlight, language, code]);
 
   return (
     <div className='relative p-4 overflow-x-auto'>
+      <CopyButton className='absolute top-2 right-2 z-10' text={code} duration={1000} />
       <div className={cn(Variants({ size }))}>
         <div
           className='bg-green5'
