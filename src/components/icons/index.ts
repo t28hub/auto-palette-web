@@ -1,4 +1,6 @@
+export * from './check';
 export * from './code';
+export * from './copy';
 export * from './cog';
 export * from './github';
 export * from './laptop';

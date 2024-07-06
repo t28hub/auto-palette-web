@@ -11,7 +11,7 @@ const ThemeButton: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost'>
+        <Button variant='ghost' className='focus-visible:ring-0'>
           <SunIcon
             className='w-5 h-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
             strokeWidth={1.5}

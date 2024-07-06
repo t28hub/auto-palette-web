@@ -36,8 +36,8 @@ jobs:
       - name: Check the format of the code
         run: pnpm lint
 
-      - name: Run the unit tests
-        run: pnpm test
-
       - name: Build the project
         run: pnpm build
+
+      - name: Run the unit tests
+        run: pnpm test
