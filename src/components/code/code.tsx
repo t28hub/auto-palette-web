@@ -6,7 +6,7 @@ import { CopyButton } from '@/components/buttons';
 import { type Language, useShiki } from '@/providers/shiki-provider';
 import { cn } from '@/utils';
 
-const Variants = cva('font-mono', {
+const CodeVariants = cva('font-mono', {
   variants: {
     size: {
       sm: 'text-xs',
@@ -22,7 +22,7 @@ const Variants = cva('font-mono', {
 /**
  * The code component props.
  */
-interface CodeProps extends VariantProps<typeof Variants> {
+interface CodeProps extends VariantProps<typeof CodeVariants> {
   /**
    * The language of the code block.
    */
@@ -53,7 +53,7 @@ const Code: FC<CodeProps> = ({ size, language, children }) => {
   return (
     <div className='relative p-4 overflow-x-auto'>
       <CopyButton className='absolute top-2 right-2 z-10' text={code} duration={1000} />
-      <div className={cn(Variants({ size }))}>
+      <div className={cn(CodeVariants({ size }))}>
         <div
           className='bg-green5'
           // biome-ignore lint/security/noDangerouslySetInnerHtml: This is a code snippet and should be rendered as HTML.
