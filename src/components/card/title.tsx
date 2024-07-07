@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { cn } from '@/utils';
+import { Heading } from '@/components/typography';
 
 /**
  * The card title component props.
@@ -22,7 +23,11 @@ interface CardTitleProps {
  * @param props The card title component props.
  */
 const CardTitle: FC<CardTitleProps> = ({ className, children }) => {
-  return <h3 className={cn('text-lg font-bold tracking-normal', className)}>{children}</h3>;
+  return (
+    <Heading as='h3' size='lg' className={className}>
+      {children}
+    </Heading>
+  );
 };
 CardTitle.displayName = 'CardTitle';
 

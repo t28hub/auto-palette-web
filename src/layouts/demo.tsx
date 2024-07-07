@@ -47,7 +47,7 @@ const DemoLayout: FC = () => {
   }, [palette, paletteError]);
 
   return (
-    <section className='w-full min-w-screen-sm  max-w-screen-lg flex items-center justify-start'>
+    <section className='w-full min-w-screen-sm max-w-screen-lg flex flex-col items-start justify-start mt-4'>
       <AspectRatio ref={containerRef} ratio={16 / 9} className='flex items-center justify-center relative'>
         <div className='h-full w-full -z-10 overflow-hidden rounded-lg bg-image-placeholder bg-4'>
           {imageBitmap && (

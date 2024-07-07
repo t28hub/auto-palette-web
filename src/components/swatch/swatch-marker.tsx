@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { type CSSProperties, forwardRef, useMemo } from 'react';
 import { cn } from '@/utils';
 
-const markerVariants = cva(
+const MarkerVariants = cva(
   'absolute -translate-x-1/2 -translate-y-1/2 z-10 rounded-full border-2 border-accent shadow-md',
   {
     variants: {
@@ -21,7 +21,7 @@ const markerVariants = cva(
 /**
  * The properties of the marker component.
  */
-interface SwatchMarkerProps extends VariantProps<typeof markerVariants> {
+interface SwatchMarkerProps extends VariantProps<typeof MarkerVariants> {
   /**
    * The class name of the marker.
    */
@@ -64,7 +64,7 @@ const SwatchMarker = forwardRef<HTMLDivElement, SwatchMarkerProps>(
     );
 
     return (
-      <div className={cn(markerVariants({ size, className }))} style={positionStyle} ref={ref} {...props}>
+      <div className={cn(MarkerVariants({ size, className }))} style={positionStyle} ref={ref} {...props}>
         <div className='w-full h-full rounded-full' style={backgroundStyle}>
           <span className='sr-only'>Color marker</span>
         </div>
