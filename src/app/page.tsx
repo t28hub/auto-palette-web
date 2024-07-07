@@ -4,6 +4,7 @@ import { CodeIcon, CogIcon, PaletteIcon, PipetteIcon, SwatchIcon, WandIcon } fro
 import { Code } from '@/components/code';
 import { DemoLayout } from '@/layouts';
 import { Heading, Text } from '@/components/typography';
+import { Anchor } from '@/components/navigation';
 
 export default function Home() {
   return (
@@ -15,6 +16,14 @@ export default function Home() {
 
         <section className='w-full min-w-screen-sm  max-w-screen-lg flex flex-col items-start justify-start mt-4'>
           <Heading as='h2' size='xl'>
+            <Anchor
+              className='absolute -translate-x-full px-2 opacity-0 hover:opacity-80'
+              slug='example'
+              ariaLabel='Link to example section'
+              underline='hover'
+            >
+              #
+            </Anchor>
             Example
           </Heading>
           <div className='w-full rounded-lg border-foreground bg-accent'>
@@ -44,8 +53,17 @@ export default function Home() {
 
         <section className='w-full min-w-screen-sm max-w-screen-lg flex flex-col items-start justify-start mt-4'>
           <Heading as='h2' size='xl'>
+            <Anchor
+              className='absolute -translate-x-full px-2 opacity-0 hover:opacity-80'
+              slug='installation'
+              ariaLabel='Link to installation section'
+              underline='hover'
+            >
+              #
+            </Anchor>
             Installation
           </Heading>
+
           <div className='w-full rounded-lg border-foreground bg-accent'>
             <Code language='toml'>
               {'[dependencies]'}
@@ -56,6 +74,14 @@ export default function Home() {
 
         <section className='w-full min-w-screen-sm max-w-screen-lg flex flex-col items-start justify-start mt-4'>
           <Heading as='h2' size='xl'>
+            <Anchor
+              className='absolute -translate-x-full px-2 opacity-0 hover:opacity-80'
+              slug='features'
+              ariaLabel='Link to features section'
+              underline='hover'
+            >
+              #
+            </Anchor>
             Features
           </Heading>
           <div className='w-full h-fit grid grid-cols-1 gap-2 md:grid-cols-2 lg:gap-4 items-stretch'>
