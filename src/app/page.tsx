@@ -3,7 +3,7 @@ import { Footer, Header } from '@/components/layouts';
 import { CodeIcon, CogIcon, PaletteIcon, PipetteIcon, SwatchIcon, WandIcon } from '@/components/icons';
 import { Code } from '@/components/code';
 import { DemoLayout } from '@/layouts';
-import { Heading } from '@/components/typography';
+import { Heading, Text } from '@/components/typography';
 
 export default function Home() {
   return (
@@ -65,10 +65,10 @@ export default function Home() {
                 <CardTitle>Automatic Palette Extraction</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-muted-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Automatically extract prominent color palettes from images to streamline your design process with
                   ease.
-                </p>
+                </Text>
               </CardContent>
             </Card>
             <Card className='flex-grow'>
@@ -77,9 +77,9 @@ export default function Home() {
                 <CardTitle>Detailed Color Insights</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Provide detailed color data including color code, position, population, and ratio of each swatch.
-                </p>
+                </Text>
               </CardContent>
             </Card>
             <Card>
@@ -88,9 +88,9 @@ export default function Home() {
                 <CardTitle>Multiple Algorithms Support</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Support multiple color extraction algorithms including DBSCAN, DBSCAN++, and K-means++.
-                </p>
+                </Text>
               </CardContent>
             </Card>
             <Card>
@@ -99,10 +99,10 @@ export default function Home() {
                 <CardTitle>Theme-Based Color Selection</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Automatically select colors based on the specified theme including colorful, vivid, light and dark,
                   and more.
-                </p>
+                </Text>
               </CardContent>
             </Card>
             <Card>
@@ -111,10 +111,10 @@ export default function Home() {
                 <CardTitle>Multiple Color Spaces Support</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-muted-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Support multiple color space conversion including RGB, HSL, CIE L*a*b* and more. Enable you to use the
                   color data in your favorite color space.
-                </p>
+                </Text>
               </CardContent>
             </Card>
             <Card>
@@ -123,9 +123,9 @@ export default function Home() {
                 <CardTitle>Multiple Languages Support</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className='text-balance text-sm text-muted-foreground'>
+                <Text size='md' className='text-secondary-foreground'>
                   Available as a Rust library, WebAssembly, and CLI. Use it in your favorite programming language.
-                </p>
+                </Text>
               </CardContent>
             </Card>
           </div>
